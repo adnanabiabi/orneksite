@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head>
+<script>
+window.onerror = function(msg, url, line, col, err) {
+  var el = document.getElementById('log');
+  if (el) el.textContent += '\nERROR: ' + msg + ' at ' + url + ':' + line + ':' + col + '\n' + (err ? err.stack : '');
+};
+</script>
+<script src="./js/content.js"></script>
+<script src="./js/icons.js"></script>
+<script src="./js/app.js"></script>
+</head>
+<body>
+<pre id="log">Debug Log:
+content.js loaded: window.siteContent is object
+meta title: SZAL Ã‡alÄ±ÅŸtayÄ± 2027 | Sabahattin Zaim Anadolu Lisesi
+</pre>
+<script>
+var el = document.getElementById('log');
+el.textContent += (typeof window.siteContent) + '\n';
+el.textContent += 'meta title: ' + (window.siteContent && window.siteContent.meta ? window.siteContent.meta.title : 'NONE') + '\n';
+</script>
+
+
+</body></html>
